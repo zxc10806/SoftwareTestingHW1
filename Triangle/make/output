@@ -1,0 +1,108 @@
+Running main() from gtest_main.cc
+[==========] Running 4 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 4 tests from TriangleTest
+[ RUN      ] TriangleTest.BoundaryValueTesting
+../samples/triangle_test.cpp:12: Failure
+Value of: "Equilateral"
+Expected: IsTriangle(1,1,1)
+Which is: "Error"
+../samples/triangle_test.cpp:13: Failure
+Value of: "Not a Triangle"
+Expected: IsTriangle(0,1,1)
+Which is: "Error"
+../samples/triangle_test.cpp:14: Failure
+Value of: "Isosceles"
+Expected: IsTriangle(50,50,70)
+Which is: "Error"
+../samples/triangle_test.cpp:15: Failure
+Value of: "Equilateral"
+Expected: IsTriangle(200,200,200)
+Which is: "Error"
+../samples/triangle_test.cpp:16: Failure
+Value of: "Isosceles"
+Expected: IsTriangle(100,200,100)
+Which is: "Error"
+../samples/triangle_test.cpp:17: Failure
+Value of: "Not a Triangle"
+Expected: IsTriangle(1,150,1)
+Which is: "Error"
+../samples/triangle_test.cpp:18: Failure
+Value of: "Scalene"
+Expected: IsTriangle(6,7,8)
+Which is: "Error"
+[  FAILED  ] TriangleTest.BoundaryValueTesting (0 ms)
+[ RUN      ] TriangleTest.EquivalenceClassTesting
+../samples/triangle_test.cpp:23: Failure
+Value of: "Equilateral"
+Expected: IsTriangle(5,5,5)
+Which is: "Error"
+../samples/triangle_test.cpp:24: Failure
+Value of: "Isosceles"
+Expected: IsTriangle(2,2,3)
+Which is: "Error"
+../samples/triangle_test.cpp:25: Failure
+Value of: "Scalene"
+Expected: IsTriangle(3,4,5)
+Which is: "Error"
+../samples/triangle_test.cpp:26: Failure
+Value of: "Not a Triangle"
+Expected: IsTriangle(4,1,2)
+Which is: "Error"
+[  FAILED  ] TriangleTest.EquivalenceClassTesting (0 ms)
+[ RUN      ] TriangleTest.EdgeTesing
+../samples/triangle_test.cpp:31: Failure
+Value of: "Equilateral"
+Expected: IsTriangle(1,1,1)
+Which is: "Error"
+../samples/triangle_test.cpp:32: Failure
+Value of: "Equilateral"
+Expected: IsTriangle(200,200,200)
+Which is: "Error"
+../samples/triangle_test.cpp:33: Failure
+Value of: "Isosceles"
+Expected: IsTriangle(50,50,1)
+Which is: "Error"
+../samples/triangle_test.cpp:34: Failure
+Value of: "Isosceles"
+Expected: IsTriangle(199,200,200)
+Which is: "Error"
+../samples/triangle_test.cpp:35: Failure
+Value of: "Scalene"
+Expected: IsTriangle(198,199,200)
+Which is: "Error"
+../samples/triangle_test.cpp:36: Failure
+Value of: "Not a Triangle"
+Expected: IsTriangle(1,2,1)
+Which is: "Error"
+[  FAILED  ] TriangleTest.EdgeTesing (0 ms)
+[ RUN      ] TriangleTest.DecistionTableTest
+../samples/triangle_test.cpp:42: Failure
+Value of: "Not a Triangle"
+Expected: IsTriangle(1,2,3)
+Which is: "Error"
+../samples/triangle_test.cpp:44: Failure
+Value of: "Isosceles"
+Expected: IsTriangle(2,2,3)
+Which is: "Error"
+../samples/triangle_test.cpp:46: Failure
+Value of: "Scalene"
+Expected: IsTriangle(200,150,140)
+Which is: "Error"
+../samples/triangle_test.cpp:48: Failure
+Value of: "Equilateral"
+Expected: IsTriangle(40,40,40)
+Which is: "Error"
+[  FAILED  ] TriangleTest.DecistionTableTest (0 ms)
+[----------] 4 tests from TriangleTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] TriangleTest.BoundaryValueTesting
+[  FAILED  ] TriangleTest.EquivalenceClassTesting
+[  FAILED  ] TriangleTest.EdgeTesing
+[  FAILED  ] TriangleTest.DecistionTableTest
+
+ 4 FAILED TESTS

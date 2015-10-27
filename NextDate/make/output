@@ -1,0 +1,100 @@
+Running main() from gtest_main.cc
+[==========] Running 4 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 4 tests from NextDateTest
+[ RUN      ] NextDateTest.BoundaryValueTesting
+../samples/NextDate_Test.cpp:12: Failure
+Value of: "1812/1/2"
+Expected: TellNextDate(1812,1,1)
+Which is: "Error"
+../samples/NextDate_Test.cpp:13: Failure
+Value of: "1812/1/16"
+Expected: TellNextDate(1812,1,15)
+Which is: "Error"
+../samples/NextDate_Test.cpp:14: Failure
+Value of: "2012/1/31"
+Expected: TellNextDate(2012,1,30)
+Which is: "Error"
+../samples/NextDate_Test.cpp:15: Failure
+Value of: "1813/2/1"
+Expected: TellNextDate(1813,1,31)
+Which is: "Error"
+[  FAILED  ] NextDateTest.BoundaryValueTesting (0 ms)
+[ RUN      ] NextDateTest.EquivalenceClassTesting
+../samples/NextDate_Test.cpp:24: Failure
+Value of: "2000/6/15"
+Expected: TellNextDate(2000,6,14)
+Which is: "Error"
+../samples/NextDate_Test.cpp:25: Failure
+Value of: "1996/7/30"
+Expected: TellNextDate(1996,7,29)
+Which is: "Error"
+../samples/NextDate_Test.cpp:26: Failure
+Value of: "Invalid Input"
+Expected: TellNextDate(2002,2,30)
+Which is: "Error"
+../samples/NextDate_Test.cpp:27: Failure
+Value of: "Invalid Input"
+Expected: TellNextDate(2000,6,31)
+Which is: "Error"
+[  FAILED  ] NextDateTest.EquivalenceClassTesting (0 ms)
+[ RUN      ] NextDateTest.EdgeTesting
+../samples/NextDate_Test.cpp:34: Failure
+Value of: "1813/1/2"
+Expected: TellNextDate(1813,1,1)
+Which is: "Error"
+../samples/NextDate_Test.cpp:35: Failure
+Value of: "1813/2/1"
+Expected: TellNextDate(1813,1,31)
+Which is: "Error"
+../samples/NextDate_Test.cpp:36: Failure
+Value of: "2000/3/1"
+Expected: TellNextDate(2000,2,29)
+Which is: "Error"
+../samples/NextDate_Test.cpp:37: Failure
+Value of: "1813/1/26"
+Expected: TellNextDate(1813,1,25)
+Which is: "Error"
+../samples/NextDate_Test.cpp:38: Failure
+Value of: "Invalid Input"
+Expected: TellNextDate(1991,9,31)
+Which is: "Error"
+[  FAILED  ] NextDateTest.EdgeTesting (0 ms)
+[ RUN      ] NextDateTest.DecisionTableTest
+../samples/NextDate_Test.cpp:46: Failure
+Value of: "2001/4/16"
+Expected: TellNextDate(2001,4,15)
+Which is: "Error"
+../samples/NextDate_Test.cpp:47: Failure
+Value of: "2001/5/1"
+Expected: TellNextDate(2001,4,30)
+Which is: "Error"
+../samples/NextDate_Test.cpp:48: Failure
+Value of: "Invalid Input"
+Expected: TellNextDate(2001,4,31)
+Which is: "Error"
+../samples/NextDate_Test.cpp:49: Failure
+Value of: "Invalid Input"
+Expected: TellNextDate(2001,2,29)
+Which is: "Error"
+../samples/NextDate_Test.cpp:50: Failure
+Value of: "Invalid Input"
+Expected: TellNextDate(2001,2,30)
+Which is: "Error"
+../samples/NextDate_Test.cpp:51: Failure
+Value of: "2004/3/1"
+Expected: TellNextDate(2004,2,29)
+Which is: "Error"
+[  FAILED  ] NextDateTest.DecisionTableTest (0 ms)
+[----------] 4 tests from NextDateTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test case ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] NextDateTest.BoundaryValueTesting
+[  FAILED  ] NextDateTest.EquivalenceClassTesting
+[  FAILED  ] NextDateTest.EdgeTesting
+[  FAILED  ] NextDateTest.DecisionTableTest
+
+ 4 FAILED TESTS

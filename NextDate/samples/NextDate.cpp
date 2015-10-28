@@ -12,7 +12,7 @@ string TellNextDate(int year,int month, int day)
 	toDay = day;
 	int caseMonth[12] = {1,4,1,2,1,2,1,1,2,1,2,3};
 	bool invalid = false;	
-	switch (caseMonth[month])
+	switch (caseMonth[month-1])
 	{
 	case 1:
 	if(day<31&&day>0)

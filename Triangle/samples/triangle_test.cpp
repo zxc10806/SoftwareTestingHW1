@@ -13,7 +13,7 @@ TEST_F(TriangleTest, BoundaryValueTesting)
         EXPECT_EQ(IsTriangle(0,1,1),"Not a Triangle");
         EXPECT_EQ(IsTriangle(50,50,70),"Isosceles");
 	EXPECT_EQ(IsTriangle(200,200,200),"Equilateral");
-	EXPECT_EQ(IsTriangle(100,200,100),"Isosceles");
+	EXPECT_EQ(IsTriangle(100,200,100),"Not a Triangle");
  	EXPECT_EQ(IsTriangle(1,150,1),"Not a Triangle");
 	EXPECT_EQ(IsTriangle(6,7,8),"Scalene");
 }

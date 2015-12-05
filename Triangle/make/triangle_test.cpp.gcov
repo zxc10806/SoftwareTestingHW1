@@ -1,0 +1,56 @@
+        -:    0:Source:../samples/triangle_test.cpp
+        -:    0:Graph:triangle_test.gcno
+        -:    0:Data:triangle_test.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "triangle.h"
+        -:    2:#include "gtest/gtest.h"
+        -:    3:
+        8:    4:class TriangleTest : public testing::Test{
+        -:    5:	protected:
+        -:    6://virtual void Setup();
+        -:    7://virtual void TearDown();
+        -:    8:};
+        -:    9:
+        5:   10:TEST_F(TriangleTest, BoundaryValueTesting)
+        -:   11:{
+        1:   12:	EXPECT_EQ(IsTriangle(1,1,1),"Equilateral");
+        1:   13:        EXPECT_EQ(IsTriangle(0,1,1),"Not a Triangle");
+        1:   14:        EXPECT_EQ(IsTriangle(50,50,70),"Isosceles");
+        1:   15:	EXPECT_EQ(IsTriangle(200,200,200),"Equilateral");
+        1:   16:	EXPECT_EQ(IsTriangle(100,200,100),"Not a Triangle");
+        1:   17: 	EXPECT_EQ(IsTriangle(1,150,1),"Not a Triangle");
+        1:   18:	EXPECT_EQ(IsTriangle(6,7,8),"Scalene");
+        1:   19:}
+        -:   20:
+        5:   21:TEST_F(TriangleTest, EquivalenceClassTesting)
+        -:   22:{
+        1:   23:	EXPECT_EQ(IsTriangle(5,5,5),"Equilateral");
+        1:   24:	EXPECT_EQ(IsTriangle(2,2,3),"Isosceles");
+        1:   25:	EXPECT_EQ(IsTriangle(3,4,5),"Scalene");
+        1:   26:	EXPECT_EQ(IsTriangle(4,1,2),"Not a Triangle");
+        1:   27:}
+        -:   28:
+        5:   29:TEST_F(TriangleTest, EdgeTesing)
+        -:   30:{
+        1:   31:	EXPECT_EQ(IsTriangle(1,1,1),"Equilateral");
+        1:   32:	EXPECT_EQ(IsTriangle(200,200,200),"Equilateral");
+        1:   33:	EXPECT_EQ(IsTriangle(50,50,1),"Isosceles");
+        1:   34:	EXPECT_EQ(IsTriangle(199,200,200),"Isosceles");
+        1:   35:	EXPECT_EQ(IsTriangle(198,199,200),"Scalene");
+        1:   36:	EXPECT_EQ(IsTriangle(1,2,1),"Not a Triangle");
+        1:   37:}
+        -:   38:
+        5:   39:TEST_F(TriangleTest, DecistionTableTest)
+        -:   40:{
+        -:   41:	//a != b
+        1:   42:	EXPECT_EQ(IsTriangle(1,2,3),"Not a Triangle");
+        -:   43:	//a = b
+        1:   44:	EXPECT_EQ(IsTriangle(2,2,3),"Isosceles");
+        -:   45:	//b != c
+        1:   46:	EXPECT_EQ(IsTriangle(200,150,140),"Scalene");
+        -:   47:	//a == c
+        1:   48:	EXPECT_EQ(IsTriangle(40,40,40),"Equilateral");
+        -:   49:
+        -:   50:
+        4:   51:}

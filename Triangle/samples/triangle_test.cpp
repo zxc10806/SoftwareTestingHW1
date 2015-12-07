@@ -49,3 +49,15 @@ TEST_F(TriangleTest, DecistionTableTest)
 
 
 }
+
+TEST_F(TriangleTest, C0Test)
+{
+	EXPECT_EQ("Not a Triangle",IsTriangle(0,0,0));
+	EXPECT_EQ("Not a Triangle",IsTriangle(1,0,0));
+	EXPECT_EQ("Not a Triangle",IsTriangle(1,1,0));
+	EXPECT_EQ("Equilateral",IsTriangle(3,3,3));
+	EXPECT_EQ("Scalene",IsTriangle(3,4,5));
+	EXPECT_EQ("Not a Triangle",IsTriangle(1,2,3));
+	EXPECT_EQ("Isosceles",IsTriangle(2,3,2));
+
+}

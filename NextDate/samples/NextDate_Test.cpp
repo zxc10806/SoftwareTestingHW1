@@ -50,3 +50,23 @@ TEST_F(NextDateTest, DecisionTableTest)
 	EXPECT_EQ(TellNextDate(2001,2,30),"Invalid Input");
 	EXPECT_EQ(TellNextDate(2004,2,29),"2004/3/1");
 }
+
+TEST_F(NextDateTest, C0Test)
+{
+	
+	EXPECT_EQ("Invalid Input",TellNextDate(1996,1,0));
+	EXPECT_EQ("1996/2/1",TellNextDate(1996,1,31));
+	EXPECT_EQ("1996/1/2",TellNextDate(1996,1,1));
+	EXPECT_EQ("Invalid Input",TellNextDate(1996,4,0));
+	EXPECT_EQ("1996/5/1",TellNextDate(1996,4,30));
+	EXPECT_EQ("1996/4/6",TellNextDate(1996,4,5));
+	EXPECT_EQ("1996/12/2",TellNextDate(1996,12,1));
+	EXPECT_EQ("1997/1/1",TellNextDate(1996,12,31));
+	EXPECT_EQ("Invalid Input",TellNextDate(1996,12,32));
+	EXPECT_EQ("1996/2/28",TellNextDate(1996,2,27));
+	EXPECT_EQ("Invalid Input",TellNextDate(1996,2,0));
+	EXPECT_EQ("1996/2/29",TellNextDate(1996,2,28));
+	EXPECT_EQ("1997/3/1",TellNextDate(1997,2,28));
+	EXPECT_EQ("1996/3/1",TellNextDate(1996,2,29));
+	EXPECT_EQ("Invalid Input",TellNextDate(1997,2,29));
+}

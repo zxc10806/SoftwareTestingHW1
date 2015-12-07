@@ -1,8 +1,8 @@
         -:    0:Source:/usr/include/c++/4.9/ext/atomicity.h
         -:    0:Graph:NextDate.gcno
         -:    0:Data:NextDate.gcda
-        -:    0:Runs:1
-        -:    0:Programs:1
+        -:    0:Runs:3
+        -:    0:Programs:3
         -:    1:// Support for atomic operations -*- C++ -*-
         -:    2:
         -:    3:// Copyright (C) 2004-2014 Free Software Foundation, Inc.

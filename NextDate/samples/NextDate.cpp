@@ -72,7 +72,7 @@ string TellNextDate(int year,int month, int day)
 	}
 	else if(day==28)
 	{
-		if((year%4==0&&year%100!=0)||year%200==0)
+		if((year%4==0&&year%100!=0)||year%400==0)
 		{
 			toDay = 29;
 		}
@@ -84,7 +84,7 @@ string TellNextDate(int year,int month, int day)
 	}
 	else if(day==29)
 	{
-		if((year%4==0&&year%100!=0)||year%200==0)
+		if((year%4==0&&year%100!=0)||year%400==0)
 		{
 			toDay = 1;
 			toMonth = 3;

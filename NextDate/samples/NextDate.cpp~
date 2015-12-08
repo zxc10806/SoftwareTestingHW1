@@ -103,10 +103,10 @@ string TellNextDate(int year,int month, int day)
 	}
 	char str[100];
 	memset(str,0,sizeof(str));
-	if(year==2012)
-	{
-		invalid = true;
-	}
+	//if(year==2012)
+	//{
+		//invalid = true;
+	//}
 	if(invalid==true)
 	{
 		return "Invalid Input";

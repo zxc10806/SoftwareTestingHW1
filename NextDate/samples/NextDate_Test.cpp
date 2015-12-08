@@ -88,3 +88,22 @@ TEST_F(NextDateTest, C1Test)
 	//1,8,9,11
 	EXPECT_EQ("1996/2/29",TellNextDate(1996,2,28));
 }
+TEST_F(NextDateTest, MCDCTest)
+{
+	//day<31 day>0(case1)
+	EXPECT_EQ("1996/1/31",TellNextDate(1996,1,30));
+	EXPECT_EQ("1996/2/1",TellNextDate(1996,1,31));
+	//day<30 day>0(case2)
+	EXPECT_EQ("1996/4/2",TellNextDate(1996,4,1));
+	EXPECT_EQ("Invalid Input",TellNextDate(1996,4,31));
+	//day<31 day>0(case3)
+	EXPECT_EQ("1996/12/31",TellNextDate(1996,12,30));
+	EXPECT_EQ("1997/1/1",TellNextDate(1996,12,31));
+	//day<28 day>0(case4)
+	EXPECT_EQ("1996/2/16",TellNextDate(1996,2,15));
+	EXPECT_EQ("1996/3/1",TellNextDate(1996,2,29));
+	//year%4==0 year%100!=0 year%400==0
+	EXPECT_EQ("1996/2/29",TellNextDate(1996,2,28));
+	EXPECT_EQ("1997/3/1",TellNextDate(1997,2,28));
+	
+}

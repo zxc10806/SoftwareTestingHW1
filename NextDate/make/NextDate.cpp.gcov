@@ -1,83 +1,83 @@
         -:    0:Source:../samples/NextDate.cpp
         -:    0:Graph:NextDate.gcno
         -:    0:Data:NextDate.gcda
-        -:    0:Runs:3
-        -:    0:Programs:3
+        -:    0:Runs:1
+        -:    0:Programs:1
         -:    1:#include"NextDate.h"
         -:    2:#include<cstdio>
         -:    3:#include<cstdlib>
         -:    4:#include<cstring>
         -:    5:#include<string>
         -:    6:using namespace std;
-       87:    7:string TellNextDate(int year,int month, int day)
+       51:    7:string TellNextDate(int year,int month, int day)
         -:    8:{
         -:    9:	int toYear, toMonth, toDay;
-       87:   10:	toYear = year;
-       87:   11:	toMonth = month;
-       87:   12:	toDay = day;
-       87:   13:	int caseMonth[12] = {1,4,1,2,1,2,1,1,2,1,2,3};
-       87:   14:	bool invalid = false;	
-       87:   15:	switch (caseMonth[month-1])
+       51:   10:	toYear = year;
+       51:   11:	toMonth = month;
+       51:   12:	toDay = day;
+       51:   13:	int caseMonth[12] = {1,4,1,2,1,2,1,1,2,1,2,3};
+       51:   14:	bool invalid = false;	
+       51:   15:	switch (caseMonth[month-1])
         -:   16:	{
         -:   17:	case 1:
-       30:   18:	if(day<31&&day>0)
+       14:   18:	if(day<31&&day>0)
         -:   19:	{
-       20:   20:		toDay = day+1;
+        8:   20:		toDay = day+1;
         -:   21:		
         -:   22:	}
-       10:   23:	else if(day==31)
+        6:   23:	else if(day==31)
         -:   24:	{
-        8:   25:		toDay = 1;
-        8:   26:		toMonth = month+1;
+        5:   25:		toDay = 1;
+        5:   26:		toMonth = month+1;
         -:   27:	}
         -:   28:	else
         -:   29:	{
-        2:   30:		invalid = true;
+        1:   30:		invalid = true;
         -:   31:	}
         -:   32:	
-       30:   33:	break;
+       14:   33:	break;
         -:   34:	case 2:
-       24:   35:	if(day<30&&day>0)
+       12:   35:	if(day<30&&day>0)
         -:   36:	{
-        8:   37:		toDay = day+1;
+        4:   37:		toDay = day+1;
         -:   38:		
         -:   39:	}
-       16:   40:	else if(day==30)
+        8:   40:	else if(day==30)
         -:   41:	{
-        5:   42:		toDay = 1;
-        5:   43:		toMonth = month+1;
+        2:   42:		toDay = 1;
+        2:   43:		toMonth = month+1;
         -:   44:	}
         -:   45:	else
         -:   46:	{
-       11:   47:		invalid = true;
+        6:   47:		invalid = true;
         -:   48:	}
         -:   49:	
-       24:   50:	break;
+       12:   50:	break;
         -:   51:	case 3:
-        6:   52:	if(day<31&&day>0)
+        7:   52:	if(day<31&&day>0)
         -:   53:	{
-        2:   54:		toDay = day+1;
+        3:   54:		toDay = day+1;
         -:   55:	}
         4:   56:	else if(day==31)
         -:   57:	{
-        2:   58:		toMonth = 1;
-        2:   59:		toDay  = 1;
-        2:   60:		toYear = year+1;
+        3:   58:		toMonth = 1;
+        3:   59:		toDay  = 1;
+        3:   60:		toYear = year+1;
         -:   61:	}
         -:   62:	else
         -:   63:	{
-        2:   64:		invalid = true;
+        1:   64:		invalid = true;
         -:   65:	}
         -:   66:	
-        6:   67:	break;
+        7:   67:	break;
         -:   68:	case 4:
-       27:   69:	if(day<28&&day>0)
+       18:   69:	if(day<28&&day>0)
         -:   70:	{
-        1:   71:		toDay = day+1;
+        3:   71:		toDay = day+1;
         -:   72:	}
-       26:   73:	else if(day==28)
+       15:   73:	else if(day==28)
         -:   74:	{
-        5:   75:		if((year%4==0&&year%100!=0)||year%200==0)
+        5:   75:		if((year%4==0&&year%100!=0)||year%400==0)
         -:   76:		{
         3:   77:			toDay = 29;
         -:   78:		}
@@ -87,41 +87,41 @@
         2:   82:			toMonth = 3;
         -:   83:		}	
         -:   84:	}
-       21:   85:	else if(day==29)
+       10:   85:	else if(day==29)
         -:   86:	{
-       13:   87:		if((year%4==0&&year%100!=0)||year%200==0)
+        7:   87:		if((year%4==0&&year%100!=0)||year%400==0)
         -:   88:		{
-        8:   89:			toDay = 1;
-        8:   90:			toMonth = 3;
+        5:   89:			toDay = 1;
+        5:   90:			toMonth = 3;
         -:   91:		}
         -:   92:		else
         -:   93:		{
-        5:   94:			invalid = true;
+        2:   94:			invalid = true;
         -:   95:		}	
         -:   96:		
         -:   97:	}
         -:   98:	else
         -:   99:	{
-        8:  100:		invalid = true;
+        3:  100:		invalid = true;
         -:  101:	}
-       27:  102:	break;
+       18:  102:	break;
         -:  103:	}
         -:  104:	char str[100];
-       87:  105:	memset(str,0,sizeof(str));
+       51:  105:	memset(str,0,sizeof(str));
         -:  106:	//if(year==2012)
         -:  107:	//{
         -:  108:		//invalid = true;
         -:  109:	//}
-       87:  110:	if(invalid==true)
+       51:  110:	if(invalid==true)
         -:  111:	{
-       28:  112:		return "Invalid Input";
+       13:  112:		return "Invalid Input";
         -:  113:	}
         -:  114:	else
         -:  115:	{
-       59:  116:		sprintf(str,"%d/%d/%d",toYear,toMonth,toDay);
-       59:  117:		string a(str);
+       38:  116:		sprintf(str,"%d/%d/%d",toYear,toMonth,toDay);
+       38:  117:		string a(str);
         -:  118:		
-       59:  119:		return a;
+       38:  119:		return a;
         -:  120:	}
         -:  121:	return "Error";
         -:  122:}

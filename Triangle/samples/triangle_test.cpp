@@ -86,3 +86,26 @@ TEST_F(TriangleTest, C1Test)
 	EXPECT_EQ("Isosceles",IsTriangle(140,150,140));
 	
 }
+
+TEST_F(TriangleTest, MCDCTest)
+{
+	//a<=0 a>200
+	EXPECT_EQ("Equilateral",IsTriangle(5,5,5));
+	EXPECT_EQ("Not a Triangle",IsTriangle(0,5,5));
+	//b<=0 b>200
+	EXPECT_EQ("Isosceles",IsTriangle(5,6,5));
+	EXPECT_EQ("Not a Triangle",IsTriangle(5,0,5));
+	//c<=0 c>200
+	EXPECT_EQ("Scalene",IsTriangle(5,4,3));
+	EXPECT_EQ("Not a Triangle",IsTriangle(5,4,0));
+	//a<b+c b<a+c c<a+b
+	EXPECT_EQ("Equilateral",IsTriangle(5,5,5));
+	EXPECT_EQ("Not a Triangle",IsTriangle(100,5,5));
+	//a==b b==c
+	EXPECT_EQ("Equilateral",IsTriangle(5,5,5));
+	EXPECT_EQ("Isosceles",IsTriangle(4,5,5));
+	
+	
+	
+
+}

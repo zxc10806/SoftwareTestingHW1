@@ -70,3 +70,21 @@ TEST_F(NextDateTest, C0Test)
 	EXPECT_EQ("1996/3/1",TellNextDate(1996,2,29));
 	EXPECT_EQ("Invalid Input",TellNextDate(1997,2,29));
 }
+
+TEST_F(NextDateTest, C1Test)
+{
+	//1,2,3	
+	EXPECT_EQ("1996/2/1",TellNextDate(1996,1,31));
+	//1,4,5
+	EXPECT_EQ("Invalid Input",TellNextDate(1996,4,31));
+	//1,6
+	EXPECT_EQ("1996/12/31",TellNextDate(1996,12,30));
+	//1,6,7
+	EXPECT_EQ("1997/1/1",TellNextDate(1996,12,31));
+	//1,8
+	EXPECT_EQ("1996/2/28",TellNextDate(1996,2,27));
+	//1,8,9,10,12
+	EXPECT_EQ("1996/3/1",TellNextDate(1996,2,29));
+	//1,8,9,11
+	EXPECT_EQ("1996/2/29",TellNextDate(1996,2,28));
+}
